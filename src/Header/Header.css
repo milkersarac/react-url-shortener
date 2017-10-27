@@ -1,14 +1,13 @@
 .app-header {
-  background-color: #F9F7F6;
-  height: 150px;
-  padding: 20px;
-  color: #EB4A42;
+  width: auto;
+
 }
 
 .app-title {
-  font-size: 1.5em;
+  color: #EB4A42;
+  text-decoration: underline;
 }
 
 .app-subtitle {
-
+  color: #AAAAAA;
 }
