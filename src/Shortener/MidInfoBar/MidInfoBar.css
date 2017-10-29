@@ -1,0 +1,19 @@
+.mid-info-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.info-text {
+  color: #555555;
+  margin-right: 20px;
+}
+
+.clear-button {
+  border: none;
+  background: none;
+  color: #EB4A42;
+}
