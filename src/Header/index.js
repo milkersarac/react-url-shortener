@@ -5,8 +5,12 @@ export default class Header extends Component {
   render() {
     return (
       <header className="app-header">
-        <h1 className="app-title">Shooooort</h1>
-        <h2 className="app-subtitle">The link shortener with a long name</h2>
+        <div className="logo app-title">
+          Shooooort
+        </div>
+        <div className="normal-text app-subtitle">
+          The link shortener with a long name
+        </div>
       </header>
     );
   }

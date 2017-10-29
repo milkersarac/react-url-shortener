@@ -1,6 +1,12 @@
 .app-header {
-  width: auto;
+  display: flex;
+  /*width: auto;*/
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .app-title {

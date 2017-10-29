@@ -9,7 +9,7 @@ export default class Shortener extends Component {
 
   render() {
     return (
-      <div>
+      <div className="shortener-main">
         <LinkForm />
         <MidInfoBar />
         <UrlList />

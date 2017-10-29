@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 600px;
 }
 
 .App-logo {
@@ -30,6 +31,31 @@ h1 {
 h2 {
   font-size: 22px;
   font-family: 'RobotoLight';
+}
+
+.logo {
+  font-size: 47px;
+  font-family: 'Montserrat';
+}
+
+.section-headings {
+  font-size: 22px;
+  font-family: 'RobotoLight';
+}
+
+.normal-text {
+  font-size: 16px;
+  font-family: 'RobotoLight';
+}
+
+.url-body {
+  font-size: 16px;
+  font-family: 'RobotoRegular';
+}
+
+.table-headings {
+  font-size: 14px;
+  font-family: 'RobotoRegular';
 }
 
 @keyframes App-logo-spin {
