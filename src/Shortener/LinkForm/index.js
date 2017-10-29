@@ -18,10 +18,14 @@ export default class LinkForm extends Component {
     return (
       <div className="url-form">
         <form onSubmit={this.shortenLink}>
-          <input ref={(a) => this._linkToShorten = a}
+          <input className="url-input normal-text"
+            ref={(a) => this._linkToShorten = a}
             placeholder="Paste the link you want to shorten here">
           </input>
-          <button type="submit">Shorten this link </button>
+          <button className="shorten-button normal-text"
+            type="submit">
+            Shorten this link
+          </button>
         </form>
       </div>
     );
