@@ -1,6 +1,5 @@
 .app-header {
   display: flex;
-  /*width: auto;*/
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;

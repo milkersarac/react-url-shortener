@@ -11,6 +11,19 @@ body {
   align-items: center;
 }
 
+::-webkit-input-placeholder {
+    color:    #CCCCCC;
+}
+:-moz-placeholder {
+    color:    #CCCCCC;
+}
+::-moz-placeholder {
+    color:    #CCCCCC;
+}
+:-ms-input-placeholder {
+    color:    #CCCCCC;
+}
+
 @font-face {
   font-family: 'Montserrat';
   src: local('Montserrat'), url(./fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
