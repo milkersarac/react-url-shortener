@@ -37,3 +37,7 @@ h2 {
   font-size: 14px;
   font-family: 'RobotoRegular';
 }
+
+/*To remove the blue glow around button and input fields.*/
+button:focus {outline:0;}
+input:focus {outline:0;}
