@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './UrlList.css';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import moment from 'moment';
 
 export default class ListItem extends Component {
 
@@ -8,7 +9,7 @@ export default class ListItem extends Component {
     const shortLinkIdentifier = this.props.shortLinkIdentifier || 'no-short';
     const originalLink = this.props.originalLink || 'no-original-link';
     const visits = this.props.visits || 'no-visits';
-    const lastVisited = this.props.lastVisited || 'no-last-visits';
+    const lastVisited = this.props.lastVisited ? moment(this.props.lastVisited).fromNow() : 'no-last-visits';
 
     return (
       <li className="link-history-item">
