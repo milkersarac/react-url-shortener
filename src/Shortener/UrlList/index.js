@@ -35,14 +35,6 @@ export default class UrlList extends Component {
 
   }
 
-
-
-  handleCopy(e) {
-    console.log('handle copy clicked');
-    e.preventDefault();
-    e.clipboardData.setData('text/plain', 'Hello, world!');
-  }
-
   render() {
     return (
       <div className="link-list-container">

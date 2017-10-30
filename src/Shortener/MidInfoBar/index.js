@@ -10,7 +10,7 @@ export default class MidInfoBar extends Component {
           Previously shortened by you
         </div>
         <button className="clear-button normal-text"
-          onClick={() => console.log('clear history clicked.')}>
+          onClick={() => this.props.clearLinkList()}>
           Clear history
         </button>
       </div>

@@ -12,9 +12,11 @@ export default class Shortener extends Component {
 
     this.state = {
       shortenedLinkList: [],
+      // shortenedLinkList: sessionStorage.getItem('shortenedLinkList') ? JSON.parse(sessionStorage.getItem('shortenedLinkList')) : [],
     };
 
     this.populateShortenedLinkList = this.populateShortenedLinkList.bind(this);
+    this.clearShortenedLinkList = this.clearShortenedLinkList.bind(this);
   }
 
   populateShortenedLinkList(linkData) {
@@ -24,13 +26,24 @@ export default class Shortener extends Component {
     this.setState({
       shortenedLinkList: tmpShortenedLinkList
     });
+
+    // sessionStorage.setItem('shortenedLinkList', JSON.stringify(tmpShortenedLinkList));
+  }
+
+  clearShortenedLinkList() {
+    console.log('Shortener, clearShortenedLinkList');
+    this.setState({
+      shortenedLinkList: []
+    });
+
+    // sessionStorage.setItem('shortenedLinkList', []);
   }
 
   render() {
     return (
       <div className="shortener-main">
         <LinkForm populateLinkList={this.populateShortenedLinkList}/>
-        <MidInfoBar />
+        <MidInfoBar clearLinkList={this.clearShortenedLinkList}/>
         <UrlList shortenedLinkList={this.state.shortenedLinkList}/>
       </div>
     );
