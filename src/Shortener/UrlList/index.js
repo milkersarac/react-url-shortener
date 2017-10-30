@@ -1,35 +1,47 @@
 import React, { Component } from 'react';
 import './UrlList.css';
+import ListItem from './ListItem';
 
-function ListItem(props) {
-  const shortLinkIdentifier = props.shortLinkIdentifier || 'no-short';
-
-  return (
-    <li className="link-history-item">
-      <div className="link">
-        <div className="link-shorten url-body">
-          <div id="short-link">
-            shooooort.com/<span style={{color:'#EB4A42'}}>{shortLinkIdentifier}</span>
-          </div>
-          <div id="copy-message" >
-            Click to copy this link
-          </div>
-        </div>
-        <div className="link-original normal-text">
-          SUB-LINKasdfasdfasdfasdfasfdasdasdfasdgdkflgjlkfjghlm,bcmqwerweutoipweurt[ieryuti]
-        </div>
-      </div>
-      <div className="visits table-headings">
-        VISITS
-      </div>
-      <div className="last-visited table-headings">
-        LAST VISITED
-      </div>
-    </li>
-  )
-}
 
 export default class UrlList extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      linkList: []
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('UrlList, cwrp: ', this.props, nextProps);
+    let tmpLinkList = [];
+
+    for (let i = 0; i < nextProps.shortenedLinkList.length; i++) {
+      let tmpLinkItem = nextProps.shortenedLinkList[i];
+      tmpLinkList.push(
+        <ListItem key={tmpLinkItem.shortcode}
+          shortLinkIdentifier={tmpLinkItem.shortcode}
+          originalLink={tmpLinkItem.originalLink}
+          visits={tmpLinkItem.visits}
+          lastVisited={tmpLinkItem.lastVisited}
+        />
+      )
+    }
+
+    this.setState({
+      linkList: tmpLinkList
+    });
+
+  }
+
+
+
+  handleCopy(e) {
+    console.log('handle copy clicked');
+    e.preventDefault();
+    e.clipboardData.setData('text/plain', 'Hello, world!');
+  }
 
   render() {
     return (
@@ -48,43 +60,7 @@ export default class UrlList extends Component {
 
         <ul className="link-history">
 
-          <ListItem />
-          <ListItem shortLinkIdentifier="another-short-link"/>
-
-          <li className="link-history-item">
-            <div className="link">
-              <div className="link-shorten url-body">
-                <div id="short-link">
-                  shooooort.com/<span style={{color:'#EB4A42'}}>fnb655</span>
-                </div>
-                <div id="copy-message" >
-                  Click to copy this link
-                </div>
-              </div>
-              <div className="link-original normal-text">
-                SUB-LINKasdfasdfasdfasdfasfdasdasdfasdgdkflgjlkfjghlm,bcmqwerweutoipweurt[ieryuti]
-              </div>
-            </div>
-            <div className="visits table-headings">
-              VISITS
-            </div>
-            <div className="last-visited table-headings">
-              LAST VISITED
-            </div>
-          </li>
-
-
-          <li className="link-history-item">
-            <div className="link-header table-headings">
-              LINK
-            </div>
-            <div className="visits-header table-headings">
-              VISITS
-            </div>
-            <div className="last-visited-header table-headings">
-              LAST VISITED
-            </div>
-          </li>
+          {this.state.linkList.reverse()}
 
         </ul>
 

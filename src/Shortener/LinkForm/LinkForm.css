@@ -24,3 +24,15 @@
   margin-left: 10px;
   cursor: pointer;
 }
+
+.shorten-button-disabled[type=submit] {
+  flex-grow: 1;
+  background-color: #E0E0E0;
+  border: none;
+  border-radius: 3px;
+  color: #BFBFBF;
+  padding: 4px;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
