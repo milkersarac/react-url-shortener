@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './UrlList.css';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default class ListItem extends Component {
 
@@ -13,9 +14,12 @@ export default class ListItem extends Component {
       <li className="link-history-item">
         <div className="link">
           <div className="link-shorten url-body">
-            <div id="short-link">
-              shooooort.com/<span style={{color:'#EB4A42'}}>{shortLinkIdentifier}</span>
-            </div>
+            <CopyToClipboard text={'shooooort.com/' + shortLinkIdentifier}>
+              <div id="short-link"
+                onClick={() => console.log('short link clicked')}>
+                shooooort.com/<span style={{color:'#EB4A42'}}>{shortLinkIdentifier}</span>
+              </div>
+            </CopyToClipboard>
             <div id="copy-message" >
               Click to copy this link
             </div>
